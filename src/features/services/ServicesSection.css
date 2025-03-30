@@ -1,0 +1,368 @@
+.services-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для новой обертки */
+.section-header {
+    display: flex;                 /* Включаем Flexbox */
+    justify-content: space-between;/* Размещаем элементы по краям (заголовок слева, кнопка справа) */
+    align-items: center;           /* Вертикально выравниваем по центру */
+    margin-bottom: 20px;           /* Добавляем отступ снизу для всего хедера */
+}
+
+.title {
+    /* text-align: center; */     /* Убираем, flex управляет горизонтальным положением */
+    /* margin-bottom: 20px; */    /* Убираем, отступ теперь у .section-header */
+    margin: 0;                   /* Убираем стандартные отступы h2, если нужно */
+}
+
+.add-button {
+    /* display: block; */          /* Убираем, flex управляет отображением */
+    /* margin: 20px auto 0; */     /* Убираем, flex управляет позиционированием и отступами */
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Можно добавить margin-left: auto; если нужен другой тип выравнивания,
+       но justify-content: space-between обычно лучше */
+}
+
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.service-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    transition: all 0.3s ease;
+    border: 2px solid #fff;
+}
+
+.service-info {
+    flex: 1;
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-name {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+.service-description {
+    margin: 15px 0;
+    padding-left: 15px;
+}
+
+.service-description ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.service-description li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.service-description li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-size: 1.2em;
+}
+
+/* Стили для цены */
+.service-price {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-top: 15px;
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+    display: inline-block;
+    border-left: 4px solid #2ecc71;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* Дополнительные стили для карточки */
+.service-info {
+    padding: 5px;
+}
+
+.service-header {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .service-description li {
+        font-size: 0.95em;
+        padding-left: 20px;
+    }
+
+    .service-item {
+        flex-direction: row; /* Оставляем горизонтальное расположение */
+        flex-wrap: wrap; /* Разрешаем перенос элементов */
+    }
+
+    .service-photo {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .service-header {
+        width: 100%; /* Занимает всю ширину */
+        display: flex;
+        justify-content: space-between; /* Распределяем пространство между элементами */
+        align-items: center;
+    }
+
+    .service-info {
+        flex: 1;
+        min-width: calc(100% - 95px); /* 80px фото + 15px отступ */
+    }
+
+    .delete-button {
+        margin-left: auto; /* Прижимаем кнопку вправо */
+    }
+}
+.description-item-container {
+    margin-bottom: 10px;
+}
+
+.description-input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.description-input {
+    flex: 1;
+    padding: 8px 35px 8px 12px; /* Правая padding для крестика */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.description-input:focus {
+    outline: none;
+    border-color: #2ecc71;
+}
+
+.remove-item-btn {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    color: #ff0000; /* Ярко-красный цвет */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.remove-item-btn:hover {
+    color: #cc0000; /* Темнее при наведении */
+}
+
+.service-price {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+.add-button:hover {
+    background-color: #27ae60;
+}
+
+/* Стили модального окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.image-preview-container {
+    margin-bottom: 15px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-preview {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px dashed #ddd;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.image-preview:hover {
+    border-color: #2ecc71;
+}
+
+.no-image-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    border: 2px dashed #ddd;
+    background-color: #f9f9f9;
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.no-image-preview:hover {
+    border-color: #2ecc71;
+    background-color: #f0f0f0;
+}
+
+/* Стили для поля загрузки файла */
+.file-upload-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.file-upload-label {
+    display: block;
+    padding: 12px 15px;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-upload-label:hover {
+    background-color: #27ae60;
+}
+
+.file-upload-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Стили для формы добавления услуги */
+.add-service-form h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.submit-button {
+    background-color: #2ecc71;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #e74c3c;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
