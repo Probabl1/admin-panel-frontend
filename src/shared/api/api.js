@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Базовые настройки axios
-axios.defaults.baseURL = 'http://localhost:5001'; // ваш бекенд URL
+axios.defaults.baseURL = 'https://api.gexpc.ru'; // ваш бекенд URL
 axios.defaults.withCredentials = true; // включаем передачу кук
 
 // Можно добавить интерцепторы для обработки ошибок
