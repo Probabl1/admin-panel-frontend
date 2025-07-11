@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './ServicesSection.css';
 
-const API_URL = 'http://localhost:5001/services';
+const API_URL = `${process.env.REACT_APP_API_URL || 'http://localhost:5001'}/services`;
+
 
 const ServicesSection = () => {
     const [services, setServices] = useState([]);
@@ -153,7 +154,7 @@ const ServicesSection = () => {
                     {services.map(service => (
                         <div key={service._id} className="service-item">
                             <img
-                                src={service.photo ? `http://localhost:5001${service.photo}` : 'https://via.placeholder.com/100'}
+                                src={service.photo ? process.env.REACT_APP_API_URL+service.photo : 'https://via.placeholder.com/100'}
                                 alt={service.name}
                                 className="service-photo"
                             />
